@@ -834,6 +834,28 @@ h1, h2, h3, h4, .logo {
     text-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
+.hero-tagline-wrapper {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+
+.hero-tagline {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: #FFCC00; /* Bright highlight color that pops on red */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    margin: 0;
+}
+
 /* Right: Photo */
 .editorial-photo-wrapper {
     flex: 1;

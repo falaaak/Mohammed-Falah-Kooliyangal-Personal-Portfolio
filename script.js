@@ -80,6 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
             ease: "power3.out",
             delay: 0.5
         });
+
+        gsap.from('.hero-tagline-wrapper', {
+            y: 20,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out",
+            delay: 1.2
+        });
     }
 
     // 2.5 Lightweight Canvas Particles for Background
