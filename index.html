@@ -68,82 +68,28 @@
     <!-- Old Nav Removed -->
     <main class="smooth-scroll-wrapper">
         
-        <!-- New Split Layout Hero (Warhol-Inspired) -->
-        <section class="hero-split-section" id="home">
-            <!-- Background Elements -->
-            <div class="bg-noise"></div>
-            <div class="bg-glow-red"></div>
+        <!-- Editorial Split Hero -->
+        <section class="editorial-hero" id="home">
+            <div class="editorial-bg"></div>
 
-            <div class="hero-split-container">
-                <!-- Left: Big Typography Mask -->
-                <div class="hero-left-mask pop-art-active" id="hero-mask-container">
-                    <!-- Slice 1 -->
-                    <div class="mask-slice slice-1">
-                        <h1 class="giant-text mask-bg-img">MFK</h1>
-                    </div>
-                    <!-- Slice 2 -->
-                    <div class="mask-slice slice-2">
-                        <h1 class="giant-text mask-bg-img">MFK</h1>
-                    </div>
-                    <!-- Slice 3 -->
-                    <div class="mask-slice slice-3">
-                        <h1 class="giant-text mask-bg-img">MFK</h1>
-                    </div>
-                    <!-- Slice 4 -->
-                    <div class="mask-slice slice-4">
-                        <h1 class="giant-text mask-bg-img">MFK</h1>
-                    </div>
-                    <!-- Slice 5 -->
-                    <div class="mask-slice slice-5">
-                        <h1 class="giant-text mask-bg-img">MFK</h1>
-                    </div>
-                    
-                    <!-- Pop Art Toggle -->
-                    <button id="pop-art-toggle" class="pop-art-toggle" aria-label="Toggle Pop Art Effect">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 14 4-4"/><path d="m14 18-4 4"/><path d="M22 6A4 4 0 0 0 18 2"/><path d="m2 22 8-8"/><path d="M7 17a4 4 0 0 0 4 4"/><path d="M17 7a4 4 0 0 0-4-4"/></svg>
-                    </button>
+            <div class="editorial-container">
+                <!-- Top Left Name -->
+                <div class="editorial-name">Falah</div>
 
-                    <p class="mfk-expansion">MOHAMMED FALAH KOOLIYANGAL</p>
+                <!-- Left: My Photo -->
+                <div class="editorial-photo-wrapper">
+                    <img src="assets/hero/falah-hero.png" alt="Mohammed Falah" class="editorial-photo">
+                    <div class="photo-gradient-overlay"></div>
                 </div>
 
-                <!-- Right: Content -->
-                <div class="hero-right-content">
-                    <p class="hero-label">CLINICAL APPLICATION SPECIALIST <span class="dot-separator">•</span> ASPIRING DATA ANALYST</p>
-                    
-                    <h2 class="hero-headline">
-                        <span class="reveal-wrapper"><span class="reveal-word">TURNING</span></span><br>
-                        <span class="reveal-wrapper"><span class="reveal-word">HEALTHCARE DATA</span></span><br>
-                        <span class="reveal-wrapper"><span class="reveal-word">INTO</span></span><br>
-                        <span class="reveal-wrapper"><span class="reveal-word">INTELLIGENT</span></span><br>
-                        <span class="reveal-wrapper"><span class="reveal-word">DECISIONS<span class="accent-dot">.</span></span></span>
-                    </h2>
-                    
-                    <p class="hero-paragraph">
-                        I help organizations turn complex data into meaningful insights through analytics, visualization and storytelling.
-                    </p>
-
-                    <!-- Hero Actions Removed -->
-
-
+                <!-- Right: Typography -->
+                <div class="editorial-content">
+                    <p class="editorial-label">MOHAMMED FALAH</p>
+                    <h1 class="editorial-headline">
+                        I'm Data<br>
+                        Analyst
+                    </h1>
                 </div>
-            </div>
-
-            <!-- Minimal Social Icons (Replaces old bottom bar) -->
-            <div class="hero-bottom-socials">
-                <a href="https://www.linkedin.com/in/mohammed-falah-000727262" target="_blank" class="hero-social-link magnetic" aria-label="LinkedIn" data-tooltip="LinkedIn">
-                    <i data-lucide="linkedin"></i>
-                </a>
-                <a href="https://instagram.com" target="_blank" class="hero-social-link magnetic" aria-label="Instagram" data-tooltip="Instagram">
-                    <i data-lucide="instagram"></i>
-                </a>
-                <a href="https://github.com/falaaak/mfk" target="_blank" class="hero-social-link magnetic" aria-label="GitHub" data-tooltip="GitHub">
-                    <i data-lucide="github"></i>
-                </a>
-            </div>
-            
-            <div class="scroll-indicator split-scroll">
-                <p>SCROLL DOWN</p>
-                <i data-lucide="arrow-down" class="bounce"></i>
             </div>
         </section>
 
@@ -163,7 +109,8 @@
                 <div class="dock-links dock-left">
                     <a href="#home" class="dock-item active magnetic">HOME</a>
                     <a href="#about" class="dock-item magnetic">ABOUT</a>
-                    <a href="#projects" class="dock-item magnetic">CASE STUDIES</a>
+                    <a href="#projects" class="dock-item magnetic">WORKS</a>
+                    <a href="#analysis" class="dock-item magnetic">ANALYSIS</a>
                 </div>
 
                 <!-- Center Logo -->
@@ -377,6 +324,46 @@
                         </div>
                     </article>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctor Specialty Analysis -->
+        <section class="analysis-section section" id="analysis">
+            <div class="container">
+                <div class="reveal-up text-center mb-5">
+                    <h2 class="giant-heading" style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1rem;">CLINICAL SPECIALTY SHARE</h2>
+                    <p class="section-kicker" style="color: var(--accent-red);">Healthcare Analytics</p>
+                </div>
+
+                <div class="analysis-grid mt-4 reveal-up">
+                    <div class="glass-panel" style="padding: 3rem;">
+                        <h3 class="mb-3" style="font-family: var(--font-heading); font-size: 2rem;">Prescription Pattern Analysis</h3>
+                        <p class="editorial-text mb-4" style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; max-width: 800px;">
+                            Explaining the doctors' specialty share of tests and identifying which departments receive the major share from top hospital doctors every month. We classify test shares into different doctors' specialties based on available prescription patterns.
+                        </p>
+                        
+                        <div class="analysis-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                            <div class="stat-box" style="border-left: 2px solid var(--accent-red); padding-left: 1rem;">
+                                <h4 style="font-size: 2.5rem; font-family: var(--font-heading); margin-bottom: 0.5rem; color: white;">42%</h4>
+                                <p style="color: var(--text-muted); font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Cardiology Tests</p>
+                            </div>
+                            <div class="stat-box" style="border-left: 2px solid var(--accent-cyan); padding-left: 1rem;">
+                                <h4 style="font-size: 2.5rem; font-family: var(--font-heading); margin-bottom: 0.5rem; color: white;">35%</h4>
+                                <p style="color: var(--text-muted); font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Neurology Tests</p>
+                            </div>
+                            <div class="stat-box" style="border-left: 2px solid rgba(255,255,255,0.2); padding-left: 1rem;">
+                                <h4 style="font-size: 2.5rem; font-family: var(--font-heading); margin-bottom: 0.5rem; color: white;">23%</h4>
+                                <p style="color: var(--text-muted); font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Other Departments</p>
+                            </div>
+                        </div>
+
+                        <!-- Monthly Distribution Visualization -->
+                        <div class="mock-chart mt-5" style="height: 120px; background: linear-gradient(90deg, rgba(255,45,45,0.3) 42%, rgba(56,189,248,0.3) 42%, rgba(56,189,248,0.3) 77%, rgba(255,255,255,0.1) 77%); border-radius: 12px; border: 1px solid var(--glass-border); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <div style="position: absolute; inset: 0; background-image: url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E'); z-index: 1;"></div>
+                            <p style="color: rgba(255,255,255,0.6); font-family: var(--font-heading); letter-spacing: 3px; font-size: 1.2rem; z-index: 2;">MONTHLY VOLUME DISTRIBUTION</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

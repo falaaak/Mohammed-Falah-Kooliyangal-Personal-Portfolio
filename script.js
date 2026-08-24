@@ -146,67 +146,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Warhol Split Layout Hero (GSAP)
     const splitHero = document.querySelector('.hero-split-section');
-    if (splitHero && typeof gsap !== 'undefined') {
-        const slices = document.querySelectorAll('.mask-slice');
-        const giantTexts = document.querySelectorAll('.giant-text');
-        
-        // Initial reveal animation
-        gsap.from(slices, {
-            y: "100%",
+    
+    // Check if we have the editorial hero
+    const editorialHero = document.querySelector('.editorial-hero');
+    
+    if (editorialHero) {
+        // Animate editorial text in
+        gsap.from('.editorial-name', {
+            y: -20,
             opacity: 0,
-            duration: 1.5,
-            stagger: 0.1,
+            duration: 1,
             ease: "power4.out",
             delay: 0.2
         });
+
+        gsap.from('.editorial-headline', {
+            y: 50,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power4.out",
+            delay: 0.4
+        });
         
-        gsap.from('.hero-right-content .reveal-word', {
-            y: "100%",
+        gsap.from('.editorial-label, .hero-bottom-socials', {
+            y: 20,
             opacity: 0,
             duration: 1,
             stagger: 0.1,
-            ease: "power3.out",
-            delay: 0.8
-        });
-
-        gsap.from('.hero-label, .hero-paragraph, .hero-actions, .hero-socials-block', {
-            y: 30,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.15,
-            ease: "power3.out",
-            delay: 1.2
-        });
-
-        // Mouse Move Parallax for Slices
-        splitHero.addEventListener('mousemove', (e) => {
-            const { innerWidth, innerHeight } = window;
-            const xPos = (e.clientX / innerWidth - 0.5) * 2; // -1 to 1
-            const yPos = (e.clientY / innerHeight - 0.5) * 2; // -1 to 1
-
-            giantTexts.forEach((text, index) => {
-                // Irregular vertical slices effect
-                // Slices move slightly differently from each other
-                const speedX = (index % 2 === 0 ? 1 : -1) * 10;
-                const speedY = ((index % 3) - 1) * 25; // -25, 0, 25...
-                
-                gsap.to(text, {
-                    x: xPos * speedX,
-                    marginTop: yPos * speedY,
-                    duration: 1,
-                    ease: "power2.out"
-                });
-            });
+            ease: "power4.out",
+            delay: 0.6
         });
         
-        // Reset on leave
-        splitHero.addEventListener('mouseleave', () => {
-            gsap.to(giantTexts, {
-                x: 0,
-                marginTop: 0,
-                duration: 1.5,
-                ease: "elastic.out(1, 0.4)"
-            });
+        gsap.from('.editorial-photo', {
+            scale: 1.05,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power2.out",
+            delay: 0.3
         });
     }
 
@@ -274,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Liquid Glass Dock Sticky Logic
         const dockNav = document.querySelector('.dock-nav');
-        const heroSection = document.querySelector('.hero-split-section');
+        const heroSection = document.querySelector('.editorial-hero') || document.querySelector('#home');
         
         if (dockNav && heroSection) {
             // When user scrolls past the bottom of the hero section, the dock becomes sticky at the top
@@ -378,21 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 8. Pop Art Toggle Logic
-    const popArtToggleBtn = document.getElementById('pop-art-toggle');
-    const heroLeftMask = document.getElementById('hero-mask-container');
-    
-    if (popArtToggleBtn && heroLeftMask) {
-        popArtToggleBtn.addEventListener('click', () => {
-            heroLeftMask.classList.toggle('pop-art-active');
-            
-            // Optional: Toggle icon state or add a small animation class
-            popArtToggleBtn.style.transform = 'translateY(-50%) scale(0.9)';
-            setTimeout(() => {
-                popArtToggleBtn.style.transform = 'translateY(-50%) scale(1)';
-            }, 150);
-        });
-    }
+
 
     // 9. Contact Form Submission Logic
     const contactForm = document.getElementById('contact-form');
