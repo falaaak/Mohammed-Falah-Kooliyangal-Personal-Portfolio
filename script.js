@@ -1,103 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // 0. Cinematic Intro Loader
-    const loader = document.getElementById('cinematic-loader');
     
-    if (loader) {
-        if (true) { // Temporarily forcing intro to play every time for testing
-            // Play Intro
-            document.body.style.overflow = 'hidden'; // Lock scroll
-            
-            const tl = gsap.timeline({
-                onComplete: () => {
-                    sessionStorage.setItem('introPlayed', 'true');
-                    loader.style.display = 'none';
-                    document.body.style.overflow = ''; // Unlock scroll
-                }
-            });
-
-            // Skip functionality
-            const skipIntro = () => {
-                tl.progress(1);
-            };
-            window.addEventListener('keydown', (e) => { if (e.key === 'Escape') skipIntro(); });
-            loader.addEventListener('click', skipIntro);
-
-            // Phase 1: Aggressive Image Flashes with Zooms & Glitches
-            const images = document.querySelectorAll('.montage-img');
-            
-            // Image 1: Raw Black & White Snap
-            tl.fromTo('.m-1', 
-                { opacity: 0, scale: 1.5 }, 
-                { opacity: 1, scale: 1, duration: 0.15, ease: "power4.out" }, 
-                0
-            );
-            tl.to('.m-1', { opacity: 0, duration: 0.05 }, 0.2);
-
-            // Image 2: Red Flash
-            tl.fromTo('.m-2', 
-                { opacity: 0, scale: 0.8, rotation: -5 }, 
-                { opacity: 1, scale: 1.2, duration: 0.2, ease: "power2.in" }, 
-                0.25
-            );
-            tl.to('.m-2', { opacity: 0, duration: 0.05 }, 0.45);
-
-            // Image 3: Blue Distorted Screen Tear
-            tl.fromTo('.m-3', 
-                { opacity: 0, scale: 1, clipPath: 'inset(40% 0 40% 0)' }, 
-                { opacity: 1, scale: 1.1, clipPath: 'inset(0% 0 0% 0)', duration: 0.15, ease: "steps(4)" }, 
-                0.5
-            );
-            tl.to('.m-3', { opacity: 0, duration: 0.05 }, 0.65);
-
-            // Image 4: Inverted High-Contrast
-            tl.fromTo('.m-4', 
-                { opacity: 0, scale: 2 }, 
-                { opacity: 1, scale: 1, duration: 0.2, ease: "expo.out" }, 
-                0.7
-            );
-            tl.to('.m-4', { opacity: 0, duration: 0.05 }, 0.9);
-
-            // Image 5: Red Inverted Nightmare Flash
-            tl.fromTo('.m-5', 
-                { opacity: 0, scale: 1.05, rotation: 3 }, 
-                { opacity: 1, scale: 1, duration: 0.15, ease: "power4.out" }, 
-                0.95
-            );
-
-            // Phase 2: Kinetic Typography Overlays (Chaotic)
-            // Name flashing
-            tl.fromTo('.k-1', { opacity: 0, scale: 2, y: -100 }, { opacity: 1, scale: 1, y: 0, duration: 0.1 }, 0.1);
-            tl.to('.k-1', { opacity: 0, duration: 0.05 }, 0.2);
-            
-            tl.fromTo('.k-2', { opacity: 0, scale: 0.5, x: 200 }, { opacity: 1, scale: 1.5, x: 0, duration: 0.1 }, 0.3);
-            tl.to('.k-2', { opacity: 0, duration: 0.05 }, 0.4);
-
-            tl.fromTo('.k-3', { opacity: 0, scale: 3, rotation: -10 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.15 }, 0.5);
-            tl.to('.k-3', { opacity: 0, duration: 0.05 }, 0.7);
-
-            // Outline Role text flashing rapidly over final hold image
-            tl.fromTo('.k-4', { opacity: 0, scale: 1 }, { opacity: 1, scale: 2.5, duration: 0.1 }, 0.95);
-            tl.to('.k-4', { opacity: 0, duration: 0.05 }, 1.1);
-            
-            tl.fromTo('.k-5', { opacity: 0, scale: 4 }, { opacity: 1, scale: 1, duration: 0.1 }, 1.15);
-            tl.to('.k-5', { opacity: 0, duration: 0.05 }, 1.3);
-
-            // Phase 3: Final Glitch out of the loader
-            tl.to('.m-5', { filter: 'hue-rotate(180deg) invert(1) contrast(300%)', x: 20, duration: 0.05 }, 1.4);
-            tl.to('.m-5', { x: -20, duration: 0.05 }, 1.45);
-            tl.to('.m-5', { opacity: 0, scale: 1.5, duration: 0.1 }, 1.5);
-            tl.to('.loader-progress-bar', { opacity: 0, duration: 0.1 }, 1.5);
-            
-            // Phase 5: Fade Out Loader
-            tl.to(loader, { opacity: 0, duration: 1, ease: "power2.inOut" }, 4.0);
-
-        } else {
-            // Already played in this session
-            loader.style.display = 'none';
-        }
-    }
-
     // 1. Cursor Reactive Lighting & Magnetic Buttons
     const cursorLight = document.querySelector('.cursor-light');
     const magneticElements = document.querySelectorAll('.magnetic');
@@ -152,21 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (editorialHero) {
         // Animate editorial text in
-        gsap.from('.editorial-label', {
-            y: 20,
-            opacity: 0,
-            duration: 1,
-            ease: "power4.out",
-            delay: 0.2
-        });
-
-        // Dynamic stagger for the massive highlighted words
         gsap.from('.editorial-headline', {
             y: 30,
             opacity: 0,
             duration: 1,
             ease: "power3.out",
-            delay: 0.3
+            delay: 0.2
         });
         
         gsap.from('.editorial-headline .highlight', {
@@ -176,16 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: 1.2,
             stagger: 0.15,
             ease: "back.out(1.7)",
-            delay: 0.5,
+            delay: 0.4,
             transformOrigin: "center bottom"
-        });
-
-        gsap.from('.editorial-subtagline', {
-            y: 20,
-            opacity: 0,
-            duration: 1,
-            ease: "power4.out",
-            delay: 1.2
         });
         
         gsap.from('.editorial-photo', {
@@ -193,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             opacity: 0,
             duration: 1.5,
             ease: "power3.out",
-            delay: 0.6
+            delay: 0.5
         });
     }
 
@@ -259,15 +144,17 @@ document.addEventListener('DOMContentLoaded', () => {
             layer.style.transform = `translateY(${yPos}px)`;
         });
 
-        // Navbar Sticky Logic (Optional: add background when scrolled)
-        const topNav = document.getElementById('top-nav');
-        if (topNav) {
-            if (scrolled > 50) {
-                topNav.style.background = 'rgba(10, 10, 10, 0.9)';
-                topNav.style.backdropFilter = 'blur(10px)';
+        // Liquid Glass Dock Sticky Logic
+        const dockNav = document.querySelector('.dock-nav');
+        const heroSection = document.querySelector('.editorial-hero') || document.querySelector('#home');
+        
+        if (dockNav && heroSection) {
+            // When user scrolls past the bottom of the hero section, the dock becomes sticky at the top
+            const heroBottom = heroSection.offsetHeight;
+            if (scrolled > heroBottom - 50) {
+                dockNav.classList.add('sticky-dock');
             } else {
-                topNav.style.background = 'transparent';
-                topNav.style.backdropFilter = 'none';
+                dockNav.classList.remove('sticky-dock');
             }
         }
     });
@@ -330,7 +217,17 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCounter();
     }
 
-    // Removed dock highlight logic
+    // 6. Liquid Glass Nav Cursor Tracking
+    const dockNavMain = document.querySelector('.dock-nav');
+    const dockHighlight = document.getElementById('dock-highlight');
+    if (dockNavMain && dockHighlight && window.matchMedia("(hover: hover)").matches) {
+        dockNavMain.addEventListener('mousemove', (e) => {
+            const rect = dockNavMain.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            dockHighlight.style.transform = `translate(calc(${x}px - 50%), calc(${y}px - 50%))`;
+        });
+    }
 
     // 7. Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
