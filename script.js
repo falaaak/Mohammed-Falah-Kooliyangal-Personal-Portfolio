@@ -152,37 +152,48 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (editorialHero) {
         // Animate editorial text in
-        gsap.from('.editorial-name', {
-            y: -20,
+        gsap.from('.editorial-label', {
+            y: 20,
             opacity: 0,
             duration: 1,
             ease: "power4.out",
             delay: 0.2
         });
 
+        // Dynamic stagger for the massive highlighted words
         gsap.from('.editorial-headline', {
-            y: 50,
+            y: 30,
             opacity: 0,
-            duration: 1.2,
-            ease: "power4.out",
-            delay: 0.4
+            duration: 1,
+            ease: "power3.out",
+            delay: 0.3
         });
         
-        gsap.from('.editorial-label, .hero-bottom-socials', {
+        gsap.from('.editorial-headline .highlight', {
+            y: 40,
+            opacity: 0,
+            rotationX: -20,
+            duration: 1.2,
+            stagger: 0.15,
+            ease: "back.out(1.7)",
+            delay: 0.5,
+            transformOrigin: "center bottom"
+        });
+
+        gsap.from('.editorial-subtagline', {
             y: 20,
             opacity: 0,
             duration: 1,
-            stagger: 0.1,
             ease: "power4.out",
-            delay: 0.6
+            delay: 1.2
         });
         
         gsap.from('.editorial-photo', {
-            scale: 1.05,
+            x: 100,
             opacity: 0,
             duration: 1.5,
-            ease: "power2.out",
-            delay: 0.3
+            ease: "power3.out",
+            delay: 0.6
         });
     }
 
@@ -248,17 +259,15 @@ document.addEventListener('DOMContentLoaded', () => {
             layer.style.transform = `translateY(${yPos}px)`;
         });
 
-        // Liquid Glass Dock Sticky Logic
-        const dockNav = document.querySelector('.dock-nav');
-        const heroSection = document.querySelector('.editorial-hero') || document.querySelector('#home');
-        
-        if (dockNav && heroSection) {
-            // When user scrolls past the bottom of the hero section, the dock becomes sticky at the top
-            const heroBottom = heroSection.offsetHeight;
-            if (scrolled > heroBottom - 50) {
-                dockNav.classList.add('sticky-dock');
+        // Navbar Sticky Logic (Optional: add background when scrolled)
+        const topNav = document.getElementById('top-nav');
+        if (topNav) {
+            if (scrolled > 50) {
+                topNav.style.background = 'rgba(10, 10, 10, 0.9)';
+                topNav.style.backdropFilter = 'blur(10px)';
             } else {
-                dockNav.classList.remove('sticky-dock');
+                topNav.style.background = 'transparent';
+                topNav.style.backdropFilter = 'none';
             }
         }
     });
@@ -321,17 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCounter();
     }
 
-    // 6. Liquid Glass Nav Cursor Tracking
-    const dockNavMain = document.querySelector('.dock-nav');
-    const dockHighlight = document.getElementById('dock-highlight');
-    if (dockNavMain && dockHighlight && window.matchMedia("(hover: hover)").matches) {
-        dockNavMain.addEventListener('mousemove', (e) => {
-            const rect = dockNavMain.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            dockHighlight.style.transform = `translate(calc(${x}px - 50%), calc(${y}px - 50%))`;
-        });
-    }
+    // Removed dock highlight logic
 
     // 7. Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-toggle');

@@ -68,109 +68,62 @@
     <!-- Old Nav Removed -->
     <main class="smooth-scroll-wrapper">
         
+        <!-- Top Navbar -->
+        <nav class="top-nav" id="top-nav">
+            <div class="nav-container">
+                <!-- Far left Logo -->
+                <a href="#home" class="nav-logo magnetic">MFK</a>
+                
+                <!-- Far right Hamburger & Theme Toggle -->
+                <div class="nav-actions">
+                    <button class="icon-btn theme-toggle-btn magnetic hidden-mobile" id="nav-theme-toggle" aria-label="Toggle Dark Mode">
+                        <i data-lucide="moon"></i>
+                    </button>
+                    <button class="nav-menu-btn magnetic" id="mobile-menu-toggle" aria-label="Toggle Menu">
+                        <span class="line line-1"></span>
+                        <span class="line line-2"></span>
+                        <span class="line line-3"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Full-screen Menu Overlay -->
+        <div class="mobile-glass-overlay" id="mobile-overlay">
+            <div class="mobile-nav-links">
+                <a href="#home" class="mobile-nav-item">HOME</a>
+                <a href="#about" class="mobile-nav-item">ABOUT</a>
+                <a href="#projects" class="mobile-nav-item">WORKS</a>
+                <a href="#experience" class="mobile-nav-item">EXPERIENCE</a>
+                <a href="#academics" class="mobile-nav-item">ACADEMICS</a>
+                <a href="#contact" class="mobile-nav-item">CONTACT</a>
+                <a href="https://drive.google.com/file/d/1O9HBIfKEEfo8phBZddZMxFg2exB2d1gF/view?usp=drive_link" target="_blank" class="mobile-nav-item resume-item">RESUME <i data-lucide="download"></i></a>
+                <button class="icon-btn theme-toggle-btn magnetic mt-4" id="mobile-theme-toggle" aria-label="Toggle Dark Mode">
+                    <i data-lucide="moon"></i> Toggle Theme
+                </button>
+            </div>
+        </div>
+
         <!-- Editorial Split Hero -->
         <section class="editorial-hero" id="home">
             <div class="editorial-bg"></div>
 
             <div class="editorial-container">
-                <!-- Top Left Name -->
-                <div class="editorial-name">Falah</div>
-
-                <!-- Left: My Photo -->
-                <div class="editorial-photo-wrapper">
-                    <img src="assets/hero/falah-hero-nobg.png" alt="Mohammed Falah" class="editorial-photo">
-                    <div class="photo-gradient-overlay"></div>
-                </div>
-
-                <!-- Right: Typography -->
+                <!-- Left: Typography -->
                 <div class="editorial-content">
                     <p class="editorial-label">MOHAMMED FALAH</p>
-                    <h1 class="editorial-headline">
-                        I'm Data<br>
-                        Analyst
+                    <h1 class="editorial-headline dynamic-text">
+                        I'm <span class="highlight">'Mohammed Falah Kooliyangal'</span> and I'm a <span class="highlight">'Data Analyst'</span>, <span class="highlight">'Clinical Application Specialist'</span> and i'm a Post Graduate in <span class="highlight">'Biotechnology'</span>
                     </h1>
+                    <p class="editorial-subtagline">Turning data into decisions</p>
+                </div>
+
+                <!-- Right: My Photo -->
+                <div class="editorial-photo-wrapper">
+                    <img src="assets/hero/falah-hero-nobg.png" alt="Mohammed Falah" class="editorial-photo cutout-3d">
                 </div>
             </div>
         </section>
-
-        <!-- Floating Liquid Glass Dock -->
-        <nav class="dock-nav" id="dock-nav">
-            <div class="dock-glass-bg"></div>
-            <div class="dock-highlight" id="dock-highlight"></div>
-            <div class="dock-wrapper">
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-btn magnetic" id="mobile-menu-toggle" aria-label="Toggle Menu">
-                    <span class="line line-1"></span>
-                    <span class="line line-2"></span>
-                    <span class="line line-3"></span>
-                </button>
-
-                <!-- Left Links -->
-                <div class="dock-links dock-left">
-                    <a href="#home" class="dock-item active magnetic">HOME</a>
-                    <a href="#about" class="dock-item magnetic">ABOUT</a>
-                    <a href="#projects" class="dock-item magnetic">WORKS</a>
-                </div>
-
-                <!-- Center Logo -->
-                <a href="#home" class="dock-logo magnetic" aria-label="MFK Home">
-                    <svg viewBox="0 0 140 50" class="mfk-svg" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#ffffff" />
-                                <stop offset="50%" stop-color="#bbbbbb" />
-                                <stop offset="100%" stop-color="#f5f5f5" />
-                            </linearGradient>
-                            <filter id="glass-glow">
-                                <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-                                <feMerge>
-                                    <feMergeNode in="coloredBlur"/>
-                                    <feMergeNode in="SourceGraphic"/>
-                                </feMerge>
-                            </filter>
-                        </defs>
-                        
-                        <!-- Text Logo -->
-                        <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" font-family="'Anton', sans-serif" font-size="42" font-weight="900" fill="url(#metalGradient)" letter-spacing="4" filter="url(#glass-glow)">MFK</text>
-                        
-                        <!-- Subtle Speed Lines (Left of M) -->
-                        <path d="M 12 18 L 22 18 M 10 25 L 18 25 M 14 32 L 24 32" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round" />
-                        
-                        <!-- Red Boot Accent integrated near K -->
-                        <path d="M 112 32 C 115 32, 118 28, 118 24 C 118 28, 122 32, 126 32" fill="none" stroke="var(--accent-red)" stroke-width="2.5" stroke-linecap="round" />
-                        
-                        <!-- Tiny Football Silhouette -->
-                        <circle cx="118" cy="18" r="2" fill="#ffffff" opacity="0.9" />
-                    </svg>
-                </a>
-
-                <!-- Right Links -->
-                <div class="dock-links dock-right">
-                    <a href="#experience" class="dock-item magnetic">EXPERIENCE</a>
-                    <a href="#academics" class="dock-item magnetic">ACADEMICS</a>
-                    <a href="#contact" class="dock-item magnetic">CONTACT</a>
-                    <a href="https://drive.google.com/file/d/1O9HBIfKEEfo8phBZddZMxFg2exB2d1gF/view?usp=drive_link" target="_blank" class="dock-item magnetic download-link">RESUME <i data-lucide="download"></i></a>
-                </div>
-                
-                <!-- Theme Toggle right next to resume on mobile -->
-                <button class="icon-btn theme-toggle-btn magnetic" id="dock-theme-toggle" aria-label="Toggle Dark Mode">
-                    <i data-lucide="moon"></i>
-                </button>
-            </div>
-        </nav>
-
-        <!-- Full-screen Mobile Overlay -->
-        <div class="mobile-glass-overlay" id="mobile-overlay">
-            <div class="mobile-nav-links">
-                <a href="#home" class="mobile-nav-item">HOME</a>
-                <a href="#about" class="mobile-nav-item">ABOUT</a>
-                <a href="#projects" class="mobile-nav-item">CASE STUDIES</a>
-                <a href="#experience" class="mobile-nav-item">EXPERIENCE</a>
-                <a href="#academics" class="mobile-nav-item">ACADEMICS</a>
-                <a href="#contact" class="mobile-nav-item">CONTACT</a>
-                <a href="https://drive.google.com/file/d/1O9HBIfKEEfo8phBZddZMxFg2exB2d1gF/view?usp=drive_link" target="_blank" class="mobile-nav-item resume-item">RESUME <i data-lucide="download"></i></a>
-            </div>
-        </div>
 
         <!-- About Section -->
         <!-- About Section (Journal) -->
