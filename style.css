@@ -27,7 +27,7 @@
     
     /* Typography */
     --font-heading: 'Anton', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-body: 'Anton', sans-serif;
     
     /* Animation Easing */
     --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
@@ -448,7 +448,7 @@ h1, h2, h3, h4, .logo {
 ========================================= */
 .dock-nav {
     position: absolute;
-    bottom: 30px;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -465,7 +465,6 @@ h1, h2, h3, h4, .logo {
 .dock-nav.sticky-dock {
     position: fixed;
     top: 20px;
-    bottom: auto;
     width: 95%;
     max-width: 1200px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
@@ -835,25 +834,47 @@ h1, h2, h3, h4, .logo {
 }
 
 .hero-tagline-wrapper {
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    margin-top: 2.5rem;
     z-index: 10;
-    text-align: center;
-    width: 100%;
-    pointer-events: none;
 }
 
 .hero-tagline {
     font-family: var(--font-heading);
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
-    font-weight: 800;
-    color: #FFCC00; /* Bright highlight color that pops on red */
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 1px;
     text-shadow: 0 4px 15px rgba(0,0,0,0.4);
     margin: 0;
+}
+
+.hero-bottom-socials {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1.5rem;
+    z-index: 20;
+}
+
+.hero-bottom-socials .about-social-link {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.hero-bottom-socials .about-social-link:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-5px);
 }
 
 /* Right: Photo */
@@ -869,10 +890,12 @@ h1, h2, h3, h4, .logo {
 
 .editorial-photo {
     width: auto;
-    height: 100%; /* enlarge and fill */
+    height: 100%; /* base height */
     max-width: 100%;
     object-fit: contain;
     object-position: bottom right;
+    transform: scale(1.15); /* Enlarge slightly without breaking flexbox */
+    transform-origin: bottom right;
     /* High quality studio lighting simulation and separation from background */
     filter: drop-shadow(-20px 10px 40px rgba(0,0,0,0.6)) contrast(1.15) brightness(1.1) sepia(0.05);
 }
