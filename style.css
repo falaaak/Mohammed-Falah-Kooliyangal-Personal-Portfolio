@@ -852,9 +852,10 @@ h1, h2, h3, h4, .logo {
 .hero-bottom-socials {
     position: absolute;
     bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    width: 100%;
     display: flex;
+    justify-content: center;
     gap: 1.5rem;
     z-index: 20;
 }
