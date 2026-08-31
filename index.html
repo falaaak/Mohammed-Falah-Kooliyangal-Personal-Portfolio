@@ -274,51 +274,34 @@
                         </div>
                     </article>
 
-                    <!-- 6. Tableau: Netflix Dashboard 1 -->
+                    <!-- 6. Tableau: Netflix Dashboard Project (Carousel) -->
                     <article class="premium-project-card reveal-up">
-                        <div class="project-image-wrapper">
-                            <div class="project-image" style="background-image: url('assets/projects/netflix1.png'); background-position: top center;"></div>
-                            <div class="project-overlay"></div>
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Netflix Content Analysis</h3>
-                            <div class="tech-badges">
-                                <span class="badge">Tableau</span>
-                                <span class="badge">Data Visualization</span>
+                        <div class="project-image-wrapper carousel-wrapper" id="netflix-carousel" data-current="0">
+                            <div class="carousel-slides">
+                                <div class="project-image carousel-slide active" style="background-image: url('assets/projects/netflix1.png'); background-position: top center;"></div>
+                                <div class="project-image carousel-slide" style="background-image: url('assets/projects/netflix2.png'); background-position: top center;"></div>
+                                <div class="project-image carousel-slide" style="background-image: url('assets/projects/netflix3.png'); background-position: top center;"></div>
                             </div>
-                            <p class="project-desc">Comprehensive Tableau dashboard visualizing Netflix's expansive library, tracking global trends, genres, and historical content additions.</p>
-                        </div>
-                    </article>
-
-                    <!-- 7. Tableau: Netflix Dashboard 2 -->
-                    <article class="premium-project-card reveal-up">
-                        <div class="project-image-wrapper">
-                            <div class="project-image" style="background-image: url('assets/projects/netflix2.png'); background-position: top center;"></div>
                             <div class="project-overlay"></div>
+                            
+                            <!-- Carousel Controls -->
+                            <button class="carousel-btn prev" aria-label="Previous image" onclick="moveCarousel('netflix-carousel', -1)">&#10094;</button>
+                            <button class="carousel-btn next" aria-label="Next image" onclick="moveCarousel('netflix-carousel', 1)">&#10095;</button>
+                            
+                            <!-- Indicators -->
+                            <div class="carousel-indicators">
+                                <span class="dot active" onclick="setCarousel('netflix-carousel', 0)"></span>
+                                <span class="dot" onclick="setCarousel('netflix-carousel', 1)"></span>
+                                <span class="dot" onclick="setCarousel('netflix-carousel', 2)"></span>
+                            </div>
                         </div>
                         <div class="project-info">
-                            <h3 class="project-title">Netflix Geographic Distribution</h3>
+                            <h3 class="project-title">Netflix Data Analysis</h3>
                             <div class="tech-badges">
                                 <span class="badge">Tableau</span>
                                 <span class="badge">Data Analytics</span>
                             </div>
-                            <p class="project-desc">Visual mapping and metric breakdown of Netflix content demographics, showcasing regional preferences and global market penetration.</p>
-                        </div>
-                    </article>
-
-                    <!-- 8. Tableau: Netflix Dashboard 3 -->
-                    <article class="premium-project-card reveal-up">
-                        <div class="project-image-wrapper">
-                            <div class="project-image" style="background-image: url('assets/projects/netflix3.png'); background-position: top center;"></div>
-                            <div class="project-overlay"></div>
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Netflix Trend Evaluation</h3>
-                            <div class="tech-badges">
-                                <span class="badge">Tableau</span>
-                                <span class="badge">Media Intelligence</span>
-                            </div>
-                            <p class="project-desc">In-depth exploration of media performance metrics, identifying key drivers of engagement and evolving viewer trends on Netflix.</p>
+                            <p class="project-desc">Comprehensive Tableau dashboard featuring multiple views: expansive library overview, global content distribution mapping, and media trend evaluations.</p>
                         </div>
                     </article>
 

@@ -309,3 +309,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// Global Carousel Functions
+window.moveCarousel = function(carouselId, step) {
+    const wrapper = document.getElementById(carouselId);
+    if (!wrapper) return;
+    
+    const slides = wrapper.querySelectorAll('.carousel-slide');
+    const dots = wrapper.querySelectorAll('.carousel-indicators .dot');
+    let current = parseInt(wrapper.getAttribute('data-current')) || 0;
+    
+    current += step;
+    if (current >= slides.length) current = 0;
+    if (current < 0) current = slides.length - 1;
+    
+    wrapper.setAttribute('data-current', current);
+    
+    slides.forEach((slide, idx) => {
+        if (idx === current) {
+            slide.classList.add('active');
+            if(dots[idx]) dots[idx].classList.add('active');
+        } else {
+            slide.classList.remove('active');
+            if(dots[idx]) dots[idx].classList.remove('active');
+        }
+    });
+};
+
+window.setCarousel = function(carouselId, index) {
+    const wrapper = document.getElementById(carouselId);
+    if (!wrapper) return;
+    
+    const slides = wrapper.querySelectorAll('.carousel-slide');
+    const dots = wrapper.querySelectorAll('.carousel-indicators .dot');
+    
+    if (index >= 0 && index < slides.length) {
+        wrapper.setAttribute('data-current', index);
+        
+        slides.forEach((slide, idx) => {
+            if (idx === index) {
+                slide.classList.add('active');
+                if(dots[idx]) dots[idx].classList.add('active');
+            } else {
+                slide.classList.remove('active');
+                if(dots[idx]) dots[idx].classList.remove('active');
+            }
+        });
+    }
+};
